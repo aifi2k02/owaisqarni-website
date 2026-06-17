@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book a Call | Owais Qarni</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+  body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Geist', sans-serif;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+  input, textarea {
+    background-color: #050505 !important;
+    border: 1px solid #262626 !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    width: 100% !important;
+    font-family: 'Geist Mono', monospace !important;
+    font-size: 14px !important;
+    outline: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+  }
+  input:focus, textarea:focus {
+    border-color: #3B82F6 !important;
+  }
+  input::placeholder, textarea::placeholder {
+    color: #404040 !important;
+    -webkit-text-fill-color: #404040 !important;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #050505 inset !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+  .day-btn.selected, .slot-btn.selected {
+    background-color: #3B82F6 !important;
+    border-color: #3B82F6 !important;
+    color: #ffffff !important;
+  }
+  .day-btn:disabled, .slot-btn:disabled {
+    opacity: 0.25 !important;
+    cursor: not-allowed !important;
+  }
+  .calendar-day.other-month { opacity: 0.25; }
+  .calendar-day.disabled { opacity: 0.2; cursor: not-allowed; }
+  .calendar-day.selected {
+    background-color: #3B82F6;
+    color: #ffffff;
+    border-radius: 8px;
+  }
+  .calendar-day.today {
+    border: 1px solid #3B82F6;
+    border-radius: 8px;
+  }
+  .calendar-day:not(.disabled):not(.selected):hover {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .step { display: none; }
+  .step.active { display: block; }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-[#262626]">
+  <nav class="flex justify-between items-center max-w-[1200px] mx-auto px-12 py-3">
+    <a href="index.html" class="text-2xl font-semibold text-white">Owais Qarni</a>
+    <div class="hidden md:flex items-center gap-12">
+      <a href="index.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Home</a>
+      <a href="about.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">About</a>
+      <a href="work-with-me.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Work With Me</a>
+      <a href="blog.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Blog</a>
+      <a href="contact.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Contact</a>
+    </div>
+    <a href="book.html" class="bg-[#3B82F6] text-white px-6 py-2 rounded font-medium uppercase tracking-wider text-sm hover:opacity-90 transition-opacity">
+      Book a Call
+    </a>
+  </nav>
+</header>
+
+<main class="pt-24 pb-20">
+  <div class="max-w-[900px] mx-auto px-6">
+
+    <!-- Header -->
+    <div class="text-center py-16">
+      <span class="font-mono text-[#3B82F6] text-xs tracking-[0.2em] uppercase mb-4 block">Free · 30 Minutes · Video Call</span>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Book a Discovery Call</h1>
+      <p class="text-[#a3a3a3] text-lg max-w-xl mx-auto">A no-pressure conversation about your business. We'll see if working together makes sense.</p>
+    </div>
+
+    <!-- Progress Steps -->
+    <div class="flex items-center justify-center gap-4 mb-12">
+      <div class="flex items-center gap-2" id="step-indicator-1">
+        <div class="w-8 h-8 rounded-full bg-[#3B82F6] flex items-center justify-center text-sm font-bold" id="step-circle-1">1</div>
+        <span class="text-sm font-mono text-white">Pick a Date</span>
+      </div>
+      <div class="w-12 h-px bg-[#262626]"></div>
+      <div class="flex items-center gap-2" id="step-indicator-2">
+        <div class="w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center text-sm font-bold text-[#a3a3a3]" id="step-circle-2">2</div>
+        <span class="text-sm font-mono text-[#a3a3a3]" id="step-label-2">Pick a Time</span>
+      </div>
+      <div class="w-12 h-px bg-[#262626]"></div>
+      <div class="flex items-center gap-2" id="step-indicator-3">
+        <div class="w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center text-sm font-bold text-[#a3a3a3]" id="step-circle-3">3</div>
+        <span class="text-sm font-mono text-[#a3a3a3]" id="step-label-3">Your Details</span>
+      </div>
+    </div>
+
+    <!-- STEP 1: Calendar -->
+    <div class="step active" id="step-1">
+      <div class="bg-[#161616] border border-[#262626] rounded-xl p-8 max-w-[500px] mx-auto">
+
+        <!-- Month Navigation -->
+        <div class="flex items-center justify-between mb-6">
+          <button onclick="prevMonth()" class="text-[#a3a3a3] hover:text-white transition-colors p-2">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <h2 class="text-lg font-semibold" id="month-label"></h2>
+          <button onclick="nextMonth()" class="text-[#a3a3a3] hover:text-white transition-colors p-2">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+
+        <!-- Day Headers -->
+        <div class="grid grid-cols-7 mb-2">
+          <div class="text-center text-xs font-mono text-[#a3a3a3] py-2">SUN</div>
+          <div class="text-center text-xs font-mono text-[#3B82F6] py-2">MON</div>
+          <div class="text-center text-xs font-mono text-[#3B82F6] py-2">TUE</div>
+          <div class="text-center text-xs font-mono text-[#3B82F6] py-2">WED</div>
+          <div class="text-center text-xs font-mono text-[#3B82F6] py-2">THU</div>
+          <div class="text-center text-xs font-mono text-[#a3a3a3] py-2">FRI</div>
+          <div class="text-center text-xs font-mono text-[#a3a3a3] py-2">SAT</div>
+        </div>
+
+        <!-- Calendar Grid -->
+        <div class="grid grid-cols-7 gap-1" id="calendar-grid"></div>
+
+        <p class="text-center text-xs font-mono text-[#a3a3a3] mt-4">Available Mon–Thu · Pakistan Standard Time (PKT)</p>
+      </div>
+    </div>
+
+    <!-- STEP 2: Time Slots -->
+    <div class="step" id="step-2">
+      <div class="bg-[#161616] border border-[#262626] rounded-xl p-8 max-w-[500px] mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <button onclick="goToStep(1)" class="text-[#a3a3a3] hover:text-white transition-colors">
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+          <div>
+            <h2 class="text-lg font-semibold">Select a Time</h2>
+            <p class="text-[#3B82F6] text-sm font-mono" id="selected-date-label"></p>
+          </div>
+        </div>
+
+        <p class="text-xs font-mono text-[#a3a3a3] uppercase tracking-wider mb-4">Available Slots · PKT (UTC+5)</p>
+        <div class="grid grid-cols-2 gap-3" id="time-slots"></div>
+      </div>
+    </div>
+
+    <!-- STEP 3: Details Form -->
+    <div class="step" id="step-3">
+      <div class="bg-[#161616] border border-[#262626] rounded-xl p-8 max-w-[500px] mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <button onclick="goToStep(2)" class="text-[#a3a3a3] hover:text-white transition-colors">
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+          <div>
+            <h2 class="text-lg font-semibold">Your Details</h2>
+            <p class="text-[#3B82F6] text-sm font-mono" id="selected-datetime-label"></p>
+          </div>
+        </div>
+
+        <form id="booking-form" class="space-y-4" onsubmit="submitBooking(event)">
+          <div>
+            <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">Full Name *</label>
+            <input type="text" id="booking-name" placeholder="John Smith" required/>
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">Email Address *</label>
+            <input type="email" id="booking-email" placeholder="john@company.com" required/>
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">Your Business / Startup</label>
+            <input type="text" id="booking-business" placeholder="What are you building?"/>
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">What do you want to discuss?</label>
+            <textarea id="booking-message" rows="4" placeholder="Give me a brief idea of what you'd like to talk about..."></textarea>
+          </div>
+          <button type="submit" id="book-btn" class="w-full bg-[#3B82F6] text-white py-4 rounded-lg font-semibold hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all mt-2">
+            Confirm Booking
+          </button>
+          <p class="text-center text-xs text-[#404040] font-mono">You'll receive a confirmation email shortly after booking.</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- STEP 4: Confirmation -->
+    <div class="step" id="step-4">
+      <div class="bg-[#161616] border border-[#3B82F6]/30 rounded-xl p-12 max-w-[500px] mx-auto text-center">
+        <div class="w-16 h-16 bg-[#3B82F6]/10 border border-[#3B82F6]/30 rounded-full flex items-center justify-center mx-auto mb-6">
+          <span class="material-symbols-outlined text-[#3B82F6] text-[36px]">check_circle</span>
+        </div>
+        <h2 class="text-2xl font-bold mb-3">You're Booked!</h2>
+        <p class="text-[#a3a3a3] mb-6" id="confirmation-text"></p>
+        <div class="bg-[#0a0a0a] border border-[#262626] rounded-lg p-4 mb-8 text-left space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[#3B82F6] text-base">calendar_today</span>
+            <span class="text-sm font-mono" id="conf-date"></span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[#3B82F6] text-base">schedule</span>
+            <span class="text-sm font-mono" id="conf-time"></span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[#3B82F6] text-base">videocam</span>
+            <span class="text-sm font-mono">Video call — link will be sent to your email</span>
+          </div>
+        </div>
+        <a href="index.html" class="inline-block border border-[#262626] text-white px-8 py-3 rounded-lg font-semibold hover:border-[#3B82F6] transition-all">
+          Back to Home
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="w-full bg-[#050505] border-t border-[#262626]">
+  <div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-12 py-6 gap-4">
+    <div class="text-2xl font-semibold text-white">Owais Qarni</div>
+    <p class="text-xs text-[#a3a3a3]">© 2026 Owais Qarni. All rights reserved.</p>
+    <div class="flex gap-8">
+      <a href="https://www.linkedin.com/in/owais-qarni/" target="_blank" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">LinkedIn</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">Twitter</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // State
+  let currentMonth, currentYear, selectedDate, selectedTime;
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  currentMonth = today.getMonth();
+  currentYear = today.getFullYear();
+
+  const AVAILABLE_DAYS = [1, 2, 3, 4]; // Mon=1, Tue=2, Wed=3, Thu=4
+  const TIME_SLOTS = ['12:00 PM','12:30 PM','1:00 PM','1:30 PM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM'];
+  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+  function renderCalendar() {
+    const grid = document.getElementById('calendar-grid');
+    document.getElementById('month-label').textContent = `${MONTHS[currentMonth]} ${currentYear}`;
+    grid.innerHTML = '';
+
+    const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const daysInPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
+
+    // Previous month filler
+    for (let i = firstDay - 1; i >= 0; i--) {
+      const d = document.createElement('div');
+      d.className = 'calendar-day other-month text-center py-2 text-sm';
+      d.textContent = daysInPrevMonth - i;
+      grid.appendChild(d);
+    }
+
+    // Current month
+    for (let day = 1; day <= daysInMonth; day++) {
+      const date = new Date(currentYear, currentMonth, day);
+      const dow = date.getDay();
+      const isPast = date < today;
+      const isAvailable = AVAILABLE_DAYS.includes(dow) && !isPast;
+      const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
+      const isToday = date.toDateString() === today.toDateString();
+
+      const d = document.createElement('div');
+      d.className = `calendar-day text-center py-2 text-sm font-medium select-none transition-colors
+        ${!isAvailable ? 'disabled text-[#404040]' : 'text-white'}
+        ${isSelected ? 'selected' : ''}
+        ${isToday && !isSelected ? 'today' : ''}`;
+      d.textContent = day;
+      if (isAvailable) d.onclick = () => selectDate(date);
+      grid.appendChild(d);
+    }
+
+    // Next month filler
+    const totalCells = grid.children.length;
+    const remaining = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
+    for (let i = 1; i <= remaining; i++) {
+      const d = document.createElement('div');
+      d.className = 'calendar-day other-month text-center py-2 text-sm';
+      d.textContent = i;
+      grid.appendChild(d);
+    }
+  }
+
+  function prevMonth() {
+    if (currentMonth === 0) { currentMonth = 11; currentYear--; }
+    else currentMonth--;
+    // Don't go before current month
+    const now = new Date();
+    if (currentYear < now.getFullYear() || (currentYear === now.getFullYear() && currentMonth < now.getMonth())) {
+      currentMonth = now.getMonth(); currentYear = now.getFullYear();
+    }
+    renderCalendar();
+  }
+
+  function nextMonth() {
+    if (currentMonth === 11) { currentMonth = 0; currentYear++; }
+    else currentMonth++;
+    renderCalendar();
+  }
+
+  function selectDate(date) {
+    selectedDate = date;
+    renderCalendar();
+    setTimeout(() => goToStep(2), 200);
+  }
+
+  function renderTimeSlots() {
+    const container = document.getElementById('time-slots');
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('selected-date-label').textContent = selectedDate.toLocaleDateString('en-US', options);
+    container.innerHTML = '';
+    TIME_SLOTS.forEach(slot => {
+      const btn = document.createElement('button');
+      btn.className = `slot-btn py-3 px-4 border border-[#262626] rounded-lg text-sm font-mono text-white hover:border-[#3B82F6] transition-all ${selectedTime === slot ? 'selected' : ''}`;
+      btn.textContent = slot + ' PKT';
+      btn.onclick = () => selectTime(slot);
+      container.appendChild(btn);
+    });
+  }
+
+  function selectTime(slot) {
+    selectedTime = slot;
+    renderTimeSlots();
+    setTimeout(() => goToStep(3), 200);
+  }
+
+  function goToStep(n) {
+    document.querySelectorAll('.step').forEach((s, i) => {
+      s.classList.toggle('active', i + 1 === n);
+    });
+    // Update progress indicators
+    for (let i = 1; i <= 3; i++) {
+      const circle = document.getElementById(`step-circle-${i}`);
+      const label = document.getElementById(`step-label-${i}`);
+      if (i < n) {
+        circle.className = 'w-8 h-8 rounded-full bg-[#3B82F6] flex items-center justify-center text-sm font-bold';
+        circle.innerHTML = '✓';
+      } else if (i === n) {
+        circle.className = 'w-8 h-8 rounded-full bg-[#3B82F6] flex items-center justify-center text-sm font-bold';
+        circle.textContent = i;
+      } else {
+        circle.className = 'w-8 h-8 rounded-full bg-[#262626] flex items-center justify-center text-sm font-bold text-[#a3a3a3]';
+        circle.textContent = i;
+      }
+    }
+    if (n === 2) renderTimeSlots();
+    if (n === 3) {
+      const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+      document.getElementById('selected-datetime-label').textContent =
+        selectedDate.toLocaleDateString('en-US', options) + ' · ' + selectedTime + ' PKT';
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function submitBooking(e) {
+    e.preventDefault();
+    const name = document.getElementById('booking-name').value;
+    const email = document.getElementById('booking-email').value;
+    const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+    const dateStr = selectedDate.toLocaleDateString('en-US', options);
+
+    // Show confirmation
+    document.getElementById('confirmation-text').textContent =
+      `Thanks ${name}! Your discovery call is confirmed. A video link will be sent to ${email}.`;
+    document.getElementById('conf-date').textContent = dateStr;
+    document.getElementById('conf-time').textContent = selectedTime + ' Pakistan Standard Time (PKT)';
+
+    goToStep(4);
+  }
+
+  // Init
+  renderCalendar();
+</script>
+
+</body>
+</html>
