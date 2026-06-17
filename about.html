@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | Owais Qarni</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface": "#12131a",
+          "on-background": "#ffffff",
+          "background": "#0a0a0a",
+          "surface-container-low": "#161616",
+          "outline-variant": "#262626",
+          "primary": "#3B82F6",
+          "on-surface": "#ffffff",
+          "on-surface-variant": "#a3a3a3",
+          "surface-container-high": "#1e1e1e",
+          "surface-container": "#121212",
+          "surface-container-lowest": "#050505",
+          "surface-variant": "#1c1c1c",
+        },
+        fontFamily: {
+          "mono": ["Geist Mono"],
+        },
+      },
+    },
+  }
+</script>
+<style>
+  body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Geist', sans-serif;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .timeline-line {
+    background: linear-gradient(to bottom, #3B82F6, rgba(59,130,246,0.1));
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-[#262626]">
+  <nav class="flex justify-between items-center max-w-[1200px] mx-auto px-12 py-3">
+    <a href="code.html" class="text-2xl font-semibold text-white">Owais Qarni</a>
+    <div class="hidden md:flex items-center gap-12">
+      <a href="code.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Home</a>
+      <a href="about.html" class="text-[#3B82F6] font-semibold border-b-2 border-[#3B82F6]">About</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Work With Me</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Blog</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Contact</a>
+    </div>
+    <button class="bg-[#3B82F6] text-white px-6 py-2 rounded font-medium uppercase tracking-wider text-sm hover:opacity-90 transition-opacity">
+      Get In Touch
+    </button>
+  </nav>
+</header>
+
+<main class="pt-24">
+
+  <!-- Hero -->
+  <section class="relative py-24 px-6 overflow-hidden">
+    <div class="hero-grid absolute inset-0 pointer-events-none opacity-50"></div>
+    <div class="relative max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+      <!-- Photo -->
+      <div class="flex justify-center md:justify-start">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-[#3B82F6]/30 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+          <div class="relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#3B82F6]/50 shadow-[0_0_30px_rgba(59,130,246,0.2)]">
+            <img src="owais.png" alt="Owais Qarni" class="w-full max-w-[420px] aspect-[3/4] object-cover"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Intro Text -->
+      <div>
+        <span class="font-mono text-[#3B82F6] text-xs tracking-[0.2em] uppercase mb-4 block">The Person Behind The Work</span>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          25 Years.<br/>
+          <span class="text-[#3B82F6]">No Shortcuts.</span>
+        </h1>
+        <p class="text-lg text-[#a3a3a3] leading-relaxed mb-6">
+          I've spent 25 years starting and running businesses in different industries. Not every idea worked. Not every bet paid off. But every experience — the wins and the failures — taught me something that no course or degree ever could.
+        </p>
+        <p class="text-lg text-[#a3a3a3] leading-relaxed">
+          Today I work with startup founders who are in the thick of it — trying to figure things out, make the right calls, and build something that lasts. I've been exactly where they are. That's why I can help.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Honest Story -->
+  <section class="py-20 bg-[#050505]">
+    <div class="max-w-[800px] mx-auto px-6">
+      <span class="font-mono text-[#3B82F6] text-xs tracking-[0.2em] uppercase mb-4 block text-center">My Story</span>
+      <h2 class="text-4xl font-bold text-center mb-16">The Long Game</h2>
+
+      <!-- Timeline -->
+      <div class="relative">
+        <div class="absolute left-4 top-0 bottom-0 w-px timeline-line"></div>
+
+        <!-- Entry 1 -->
+        <div class="relative pl-14 mb-14">
+          <div class="absolute left-0 w-8 h-8 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6] flex items-center justify-center">
+            <span class="material-symbols-outlined text-[#3B82F6] text-base">start</span>
+          </div>
+          <span class="font-mono text-[#3B82F6] text-xs tracking-widest uppercase">Where It Began · Late 1990s</span>
+          <h3 class="text-xl font-semibold mt-2 mb-3">Starting from the ground up</h3>
+          <p class="text-[#a3a3a3] leading-relaxed">
+            I started as a merchandiser in the textile industry — learning how products move from factories to shelves across the world. It wasn't glamorous, but it taught me the fundamentals of supply chains, vendor relationships, and how real business actually works at ground level.
+          </p>
+        </div>
+
+        <!-- Entry 2 -->
+        <div class="relative pl-14 mb-14">
+          <div class="absolute left-0 w-8 h-8 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6] flex items-center justify-center">
+            <span class="material-symbols-outlined text-[#3B82F6] text-base">public</span>
+          </div>
+          <span class="font-mono text-[#3B82F6] text-xs tracking-widest uppercase">Going Global · 2003–2013</span>
+          <h3 class="text-xl font-semibold mt-2 mb-3">Building across borders</h3>
+          <p class="text-[#a3a3a3] leading-relaxed">
+            I built an apparel sourcing business from scratch — crossing borders, negotiating with factories across multiple countries, and securing deals with major retail chains in Europe. We hit $4M in sales by year two. That taught me how to build with limited resources and how global trade really operates beneath the surface.
+          </p>
+        </div>
+
+        <!-- Entry 3 -->
+        <div class="relative pl-14 mb-14">
+          <div class="absolute left-0 w-8 h-8 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6] flex items-center justify-center">
+            <span class="material-symbols-outlined text-[#3B82F6] text-base">storefront</span>
+          </div>
+          <span class="font-mono text-[#3B82F6] text-xs tracking-widest uppercase">New Markets · 2013–2020</span>
+          <h3 class="text-xl font-semibold mt-2 mb-3">Trading, retail, and hard lessons</h3>
+          <p class="text-[#a3a3a3] leading-relaxed">
+            I moved into new markets — trading in the Gulf region, building a fashion retail brand, managing operations, sales, and teams. Some things worked. Some didn't. I launched two retail outlets, scaled a men's clothing brand, and learned that growth without systems is just chaos with momentum.
+          </p>
+        </div>
+
+        <!-- Entry 4 -->
+        <div class="relative pl-14 mb-14">
+          <div class="absolute left-0 w-8 h-8 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6] flex items-center justify-center">
+            <span class="material-symbols-outlined text-[#3B82F6] text-base">newspaper</span>
+          </div>
+          <span class="font-mono text-[#3B82F6] text-xs tracking-widest uppercase">Media & Content · 2020–Present</span>
+          <h3 class="text-xl font-semibold mt-2 mb-3">Pivoting into digital media</h3>
+          <p class="text-[#a3a3a3] leading-relaxed">
+            I co-founded two regional media platforms covering Saudi Arabia and Qatar — learning audience building, content strategy, and digital operations from the ground up. Pivoting into a completely new industry at this stage wasn't comfortable. But that discomfort taught me more about adaptability than any decade before it.
+          </p>
+        </div>
+
+        <!-- Entry 5 -->
+        <div class="relative pl-14">
+          <div class="absolute left-0 w-8 h-8 rounded-full bg-[#3B82F6] border border-[#3B82F6] flex items-center justify-center">
+            <span class="material-symbols-outlined text-white text-base">rocket_launch</span>
+          </div>
+          <span class="font-mono text-[#3B82F6] text-xs tracking-widest uppercase">Now · Nexosol & Advisory</span>
+          <h3 class="text-xl font-semibold mt-2 mb-3">Technology, AI, and helping founders</h3>
+          <p class="text-[#a3a3a3] leading-relaxed">
+            Today I run Nexosol, a technology venture, and work with startup founders as an advisor. The thread connecting all 25 years is simple: I believe in simple ideas, strong execution, and real impact. I help founders cut through the noise and build businesses that actually work.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Believe -->
+  <section class="py-20 bg-[#0a0a0a]">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <span class="font-mono text-[#3B82F6] text-xs tracking-[0.2em] uppercase mb-4 block text-center">Philosophy</span>
+      <h2 class="text-4xl font-bold text-center mb-14">What I Believe</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 bg-[#161616] border border-[#262626] rounded-xl hover:border-[#3B82F6] transition-colors">
+          <span class="material-symbols-outlined text-[#3B82F6] text-[40px] mb-4 block">lightbulb</span>
+          <h3 class="text-xl font-semibold mb-3">Simple ideas win</h3>
+          <p class="text-[#a3a3a3] leading-relaxed">Complexity is usually a sign of confusion. The best businesses I've seen — and built — are rooted in a clear, simple idea executed extremely well.</p>
+        </div>
+        <div class="p-8 bg-[#161616] border border-[#262626] rounded-xl hover:border-[#3B82F6] transition-colors">
+          <span class="material-symbols-outlined text-[#3B82F6] text-[40px] mb-4 block">construction</span>
+          <h3 class="text-xl font-semibold mb-3">Execution is everything</h3>
+          <p class="text-[#a3a3a3] leading-relaxed">I've seen brilliant ideas fail and average ideas succeed. The difference is always execution. Strategy without implementation is just a document.</p>
+        </div>
+        <div class="p-8 bg-[#161616] border border-[#262626] rounded-xl hover:border-[#3B82F6] transition-colors">
+          <span class="material-symbols-outlined text-[#3B82F6] text-[40px] mb-4 block">school</span>
+          <h3 class="text-xl font-semibold mb-3">Failure is data</h3>
+          <p class="text-[#a3a3a3] leading-relaxed">Not every business I've built worked. I don't hide that. The failures taught me more than the successes — and that experience is exactly what I bring to the founders I work with.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-[#050505]">
+    <div class="max-w-[700px] mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6">Ready to talk?</h2>
+      <p class="text-lg text-[#a3a3a3] mb-10">
+        Whether you're just starting out or trying to break through a ceiling — I've probably been there. Let's figure it out together.
+      </p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="#" class="bg-[#3B82F6] text-white px-10 py-4 rounded-lg font-semibold hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all text-center">
+          Work With Me
+        </a>
+        <a href="#" class="border border-[#262626] text-white px-10 py-4 rounded-lg font-semibold hover:border-[#3B82F6] transition-all text-center">
+          Read My Blog
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full bg-[#050505] border-t border-[#262626]">
+  <div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-12 py-6 gap-4">
+    <div class="text-2xl font-semibold text-white">Owais Qarni</div>
+    <p class="text-xs text-[#a3a3a3]">© 2026 Owais Qarni. All rights reserved.</p>
+    <div class="flex gap-8">
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">LinkedIn</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">Twitter</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">Substack</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 20) {
+      header.classList.add('shadow-lg');
+    } else {
+      header.classList.remove('shadow-lg');
+    }
+  });
+</script>
+
+</body>
+</html>

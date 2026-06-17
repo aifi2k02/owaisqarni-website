@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Work With Me | Owais Qarni</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+  body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Geist', sans-serif;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  input, textarea, select {
+    background-color: #050505;
+    border: 1px solid #262626;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 100%;
+    font-family: 'Geist Mono', monospace;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  input:focus, textarea:focus, select:focus {
+    border-color: #3B82F6;
+  }
+  input::placeholder, textarea::placeholder {
+    color: #404040;
+  }
+  select option {
+    background-color: #161616;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-[#262626]">
+  <nav class="flex justify-between items-center max-w-[1200px] mx-auto px-12 py-3">
+    <a href="code.html" class="text-2xl font-semibold text-white">Owais Qarni</a>
+    <div class="hidden md:flex items-center gap-12">
+      <a href="code.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Home</a>
+      <a href="about.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">About</a>
+      <a href="work-with-me.html" class="text-[#3B82F6] font-semibold border-b-2 border-[#3B82F6]">Work With Me</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Blog</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Contact</a>
+    </div>
+    <button class="bg-[#3B82F6] text-white px-6 py-2 rounded font-medium uppercase tracking-wider text-sm hover:opacity-90 transition-opacity">
+      Get In Touch
+    </button>
+  </nav>
+</header>
+
+<main class="pt-24">
+
+  <!-- Hero -->
+  <section class="relative py-24 px-6 overflow-hidden text-center">
+    <div class="hero-grid absolute inset-0 pointer-events-none opacity-50"></div>
+    <div class="relative max-w-[700px] mx-auto">
+      <span class="font-mono text-[#3B82F6] text-xs tracking-[0.2em] uppercase mb-4 block">Advisory</span>
+      <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+        Let's Work<br/><span class="text-[#3B82F6]">Together</span>
+      </h1>
+      <p class="text-lg text-[#a3a3a3] leading-relaxed">
+        I work with a small number of founders at a time — so I can give each one real attention. If you're serious about building, I'm serious about helping.
+      </p>
+    </div>
+  </section>
+
+  <!-- Offerings -->
+  <section class="py-20 bg-[#050505]">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <span class="font-mono text-[#3B82F6] text-xs tracking-[0.2em] uppercase mb-4 block text-center">How I Can Help</span>
+      <h2 class="text-4xl font-bold text-center mb-14">Choose Your Path</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[900px] mx-auto">
+
+        <!-- Offering 1: Founder Advisory -->
+        <div class="relative p-10 bg-[#161616] border border-[#3B82F6] rounded-xl flex flex-col">
+          <div class="absolute top-6 right-6">
+            <span class="font-mono text-[10px] tracking-widest uppercase bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/30 px-3 py-1 rounded-full">Most Popular</span>
+          </div>
+          <span class="material-symbols-outlined text-[#3B82F6] text-[48px] mb-6">handshake</span>
+          <h3 class="text-2xl font-bold mb-3">Founder Advisory</h3>
+          <p class="text-[#a3a3a3] leading-relaxed mb-6">
+            An ongoing advisory relationship. We meet regularly — I become a thinking partner you can call on when decisions matter. Strategy, operations, market entry, team, investors — nothing is off the table.
+          </p>
+          <div class="border-t border-[#262626] pt-6 mb-8">
+            <p class="text-sm text-[#a3a3a3] font-mono mb-4 uppercase tracking-wider">What's included</p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-[#a3a3a3]">
+                <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">check</span>
+                2–4 sessions per month (video or in-person)
+              </li>
+              <li class="flex items-start gap-3 text-[#a3a3a3]">
+                <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">check</span>
+                Async support between sessions (WhatsApp / email)
+              </li>
+              <li class="flex items-start gap-3 text-[#a3a3a3]">
+                <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">check</span>
+                Review of business decisions, pitches, and plans
+              </li>
+              <li class="flex items-start gap-3 text-[#a3a3a3]">
+                <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">check</span>
+                Access to my network across industries and regions
+              </li>
+              <li class="flex items-start gap-3 text-[#a3a3a3]">
+                <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">check</span>
+                Monthly retainer — cancel anytime
+              </li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <p class="text-xs text-[#a3a3a3] font-mono mb-3">Pricing on enquiry</p>
+            <a href="#enquire" class="block w-full bg-[#3B82F6] text-white text-center py-4 rounded-lg font-semibold hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all">
+              Enquire Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Offering 2: Business Review -->
+        <div class="relative p-10 bg-[#161616] border border-[#262626] rounded-xl flex flex-col hover:border-[#3B82F6] transition-colors">
+          <span class="material-symbols-outlined text-[#3B82F6] text-[48px] mb-6">manage_search</span>
+          <h3 class="text-2xl font-bold mb-3">Business Review</h3>
+          <p class="text-[#a3a3a3] leading-relaxed mb-6">
+            A focused, one-time deep dive into your business. I review what you're building, where you're stuck, and what needs to change — then deliver a clear written action plan you can act on immediately.
+          </p>
+          <div class="border-t border-[#262626] pt-6 mb-8">
+            <p class="text-sm text-[#a3a3a3] font-mono mb-4 uppercase tracking-wider">What's included</p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-[#a3a3a3]">
+                <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">check</span>
+                1 deep-dive session (90 minutes)
+              </li>
+              <li class="flex items-start gap-3 text-[#a3a3a3]">
+                <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">check</span>
+                Full review of your business model, market, and team
+              </li>
+              <li class="flex items-start gap-3 text-[#a3a3a3]">
+                <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">check</span>
+                Written action plan delivered within 48 hours
+              </li>
+              <li class="flex items-start gap-3 text-[#a3a3a3]">
+                <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">check</span>
+                Priority areas, quick wins, and 90-day roadmap
+              </li>
+              <li class="flex items-start gap-3 text-[#a3a3a3]">
+                <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">check</span>
+                One-time engagement — no commitment required
+              </li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <p class="text-xs text-[#a3a3a3] font-mono mb-3">Pricing on enquiry</p>
+            <a href="#enquire" class="block w-full border border-[#262626] text-white text-center py-4 rounded-lg font-semibold hover:border-[#3B82F6] transition-all">
+              Enquire Now
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Who This Is For -->
+  <section class="py-20 bg-[#0a0a0a]">
+    <div class="max-w-[900px] mx-auto px-6">
+      <span class="font-mono text-[#3B82F6] text-xs tracking-[0.2em] uppercase mb-4 block text-center">Ideal Fit</span>
+      <h2 class="text-4xl font-bold text-center mb-14">Who I Work Best With</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex items-start gap-4 p-6 bg-[#161616] border border-[#262626] rounded-xl">
+          <span class="material-symbols-outlined text-[#3B82F6] mt-0.5">check_circle</span>
+          <p class="text-[#a3a3a3]">Early-stage founders with a product or idea and their first customers — ready to think seriously about growth</p>
+        </div>
+        <div class="flex items-start gap-4 p-6 bg-[#161616] border border-[#262626] rounded-xl">
+          <span class="material-symbols-outlined text-[#3B82F6] mt-0.5">check_circle</span>
+          <p class="text-[#a3a3a3]">Entrepreneurs in manufacturing, trade, fashion, media, or tech — industries I know from the inside</p>
+        </div>
+        <div class="flex items-start gap-4 p-6 bg-[#161616] border border-[#262626] rounded-xl">
+          <span class="material-symbols-outlined text-[#3B82F6] mt-0.5">check_circle</span>
+          <p class="text-[#a3a3a3]">Founders who want to integrate AI into their business but aren't sure where to start or what's actually useful</p>
+        </div>
+        <div class="flex items-start gap-4 p-6 bg-[#161616] border border-[#262626] rounded-xl">
+          <span class="material-symbols-outlined text-[#3B82F6] mt-0.5">check_circle</span>
+          <p class="text-[#a3a3a3]">Business owners looking to enter new markets — especially across South Asia, the Gulf, or international export</p>
+        </div>
+        <div class="flex items-start gap-4 p-6 bg-[#161616] border border-[#262626] rounded-xl md:col-span-2">
+          <span class="material-symbols-outlined text-[#3B82F6] mt-0.5">check_circle</span>
+          <p class="text-[#a3a3a3]">People who want honest, direct advice — not someone who just agrees with everything they say</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enquiry Form -->
+  <section class="py-20 bg-[#050505]" id="enquire">
+    <div class="max-w-[650px] mx-auto px-6">
+      <span class="font-mono text-[#3B82F6] text-xs tracking-[0.2em] uppercase mb-4 block text-center">Get In Touch</span>
+      <h2 class="text-4xl font-bold text-center mb-4">Send an Enquiry</h2>
+      <p class="text-[#a3a3a3] text-center mb-12">Tell me a bit about your business and what you're looking for. I'll get back to you within 48 hours.</p>
+
+      <form class="space-y-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">Your Name</label>
+            <input type="text" placeholder="John Smith"/>
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">Email Address</label>
+            <input type="email" placeholder="john@company.com"/>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">Your Business / Startup</label>
+          <input type="text" placeholder="What are you building?"/>
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">I'm Interested In</label>
+          <select>
+            <option value="" disabled selected>Select an option</option>
+            <option value="advisory">Founder Advisory (ongoing)</option>
+            <option value="review">Business Review (one-time)</option>
+            <option value="unsure">Not sure yet — let's talk</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">What's Your Biggest Challenge Right Now?</label>
+          <textarea rows="5" placeholder="Tell me what you're working on and where you're stuck..."></textarea>
+        </div>
+        <button type="submit" class="w-full bg-[#3B82F6] text-white py-4 rounded-lg font-semibold hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all mt-2">
+          Send Enquiry
+        </button>
+        <p class="text-center text-xs text-[#404040] font-mono">I read every message personally and reply within 48 hours.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full bg-[#050505] border-t border-[#262626]">
+  <div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-12 py-6 gap-4">
+    <div class="text-2xl font-semibold text-white">Owais Qarni</div>
+    <p class="text-xs text-[#a3a3a3]">© 2026 Owais Qarni. All rights reserved.</p>
+    <div class="flex gap-8">
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">LinkedIn</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">Twitter</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">Substack</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 20) {
+      header.classList.add('shadow-lg');
+    } else {
+      header.classList.remove('shadow-lg');
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog | Owais Qarni</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+  body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Geist', sans-serif;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .card-icon {
+    transition: transform 0.3s ease;
+  }
+  .post-card:hover .card-icon {
+    transform: scale(1.1);
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-[#262626]">
+  <nav class="flex justify-between items-center max-w-[1200px] mx-auto px-12 py-3">
+    <a href="code.html" class="text-2xl font-semibold text-white">Owais Qarni</a>
+    <div class="hidden md:flex items-center gap-12">
+      <a href="code.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Home</a>
+      <a href="about.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">About</a>
+      <a href="work-with-me.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Work With Me</a>
+      <a href="blog.html" class="text-[#3B82F6] font-semibold border-b-2 border-[#3B82F6]">Blog</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Contact</a>
+    </div>
+    <button class="bg-[#3B82F6] text-white px-6 py-2 rounded font-medium uppercase tracking-wider text-sm hover:opacity-90 transition-opacity">
+      Get In Touch
+    </button>
+  </nav>
+</header>
+
+<main class="pt-24">
+
+  <!-- Hero -->
+  <section class="relative py-24 px-6 overflow-hidden text-center">
+    <div class="hero-grid absolute inset-0 pointer-events-none opacity-50"></div>
+    <div class="relative max-w-[700px] mx-auto">
+      <span class="font-mono text-[#3B82F6] text-xs tracking-[0.2em] uppercase mb-4 block">Latest Thinking</span>
+      <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+        The <span class="text-[#3B82F6]">Blog</span>
+      </h1>
+      <p class="text-lg text-[#a3a3a3] leading-relaxed">
+        Real lessons from 25 years of building businesses. No fluff, no recycled advice — just what I've actually learned about entrepreneurship, AI, and what it takes to build something that lasts.
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="py-20 bg-[#050505]">
+    <div class="max-w-[1200px] mx-auto px-6">
+
+      <!-- Row 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+
+        <!-- Post 1 -->
+        <div class="post-card bg-[#161616] border border-[#262626] rounded-xl overflow-hidden group cursor-pointer hover:border-[#3B82F6] transition-all flex flex-col">
+          <div class="aspect-video bg-[#1e1e1e] flex flex-col items-center justify-center gap-3">
+            <span class="material-symbols-outlined text-[#3B82F6] text-[56px] card-icon">psychology</span>
+            <span class="font-mono text-[#3B82F6] text-[10px] tracking-widest uppercase">AI Strategy</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <span class="text-[#3B82F6] font-mono text-[10px] tracking-widest uppercase mb-2">AI STRATEGY · Jun 2026</span>
+            <h3 class="text-lg font-semibold mb-3 group-hover:text-[#3B82F6] transition-colors leading-snug">Why AI Readiness is the New Digital Transformation</h3>
+            <p class="text-[#a3a3a3] text-sm leading-relaxed mb-6 flex-1">How businesses can prepare their data, culture, and operations for the agentic future — before it's too late.</p>
+            <div class="flex items-center gap-2 text-[#3B82F6] text-sm font-semibold mt-auto">
+              <span>Read Post</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="post-card bg-[#161616] border border-[#262626] rounded-xl overflow-hidden group cursor-pointer hover:border-[#3B82F6] transition-all flex flex-col">
+          <div class="aspect-video bg-[#1e1e1e] flex flex-col items-center justify-center gap-3">
+            <span class="material-symbols-outlined text-[#3B82F6] text-[56px] card-icon">timeline</span>
+            <span class="font-mono text-[#3B82F6] text-[10px] tracking-widest uppercase">Entrepreneurship</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <span class="text-[#3B82F6] font-mono text-[10px] tracking-widest uppercase mb-2">ENTREPRENEURSHIP · Jun 2026</span>
+            <h3 class="text-lg font-semibold mb-3 group-hover:text-[#3B82F6] transition-colors leading-snug">The 25-Year Perspective: What Hasn't Changed</h3>
+            <p class="text-[#a3a3a3] text-sm leading-relaxed mb-6 flex-1">Fundamentals of trade and manufacturing that still apply in the age of SaaS, AI, and instant everything.</p>
+            <div class="flex items-center gap-2 text-[#3B82F6] text-sm font-semibold mt-auto">
+              <span>Read Post</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="post-card bg-[#161616] border border-[#262626] rounded-xl overflow-hidden group cursor-pointer hover:border-[#3B82F6] transition-all flex flex-col">
+          <div class="aspect-video bg-[#1e1e1e] flex flex-col items-center justify-center gap-3">
+            <span class="material-symbols-outlined text-[#3B82F6] text-[56px] card-icon">public</span>
+            <span class="font-mono text-[#3B82F6] text-[10px] tracking-widest uppercase">Market Entry</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <span class="text-[#3B82F6] font-mono text-[10px] tracking-widest uppercase mb-2">MARKET ENTRY · May 2026</span>
+            <h3 class="text-lg font-semibold mb-3 group-hover:text-[#3B82F6] transition-colors leading-snug">Scaling Across the GCC: A Playbook for Founders</h3>
+            <p class="text-[#a3a3a3] text-sm leading-relaxed mb-6 flex-1">Tactical advice on entering Saudi and Qatari markets — what works, what doesn't, and what most outsiders get wrong.</p>
+            <div class="flex items-center gap-2 text-[#3B82F6] text-sm font-semibold mt-auto">
+              <span>Read Post</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Row 2 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Post 4 -->
+        <div class="post-card bg-[#161616] border border-[#262626] rounded-xl overflow-hidden group cursor-pointer hover:border-[#3B82F6] transition-all flex flex-col">
+          <div class="aspect-video bg-[#1e1e1e] flex flex-col items-center justify-center gap-3">
+            <span class="material-symbols-outlined text-[#3B82F6] text-[56px] card-icon">rocket_launch</span>
+            <span class="font-mono text-[#3B82F6] text-[10px] tracking-widest uppercase">Startups</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <span class="text-[#3B82F6] font-mono text-[10px] tracking-widest uppercase mb-2">STARTUPS · May 2026</span>
+            <h3 class="text-lg font-semibold mb-3 group-hover:text-[#3B82F6] transition-colors leading-snug">The Mistake Every New Founder Makes in Year One</h3>
+            <p class="text-[#a3a3a3] text-sm leading-relaxed mb-6 flex-1">It's not about the idea, the funding, or the team. It's something far simpler — and far more costly.</p>
+            <div class="flex items-center gap-2 text-[#3B82F6] text-sm font-semibold mt-auto">
+              <span>Read Post</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 5 -->
+        <div class="post-card bg-[#161616] border border-[#262626] rounded-xl overflow-hidden group cursor-pointer hover:border-[#3B82F6] transition-all flex flex-col">
+          <div class="aspect-video bg-[#1e1e1e] flex flex-col items-center justify-center gap-3">
+            <span class="material-symbols-outlined text-[#3B82F6] text-[56px] card-icon">precision_manufacturing</span>
+            <span class="font-mono text-[#3B82F6] text-[10px] tracking-widest uppercase">Operations</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <span class="text-[#3B82F6] font-mono text-[10px] tracking-widest uppercase mb-2">OPERATIONS · Apr 2026</span>
+            <h3 class="text-lg font-semibold mb-3 group-hover:text-[#3B82F6] transition-colors leading-snug">Growth Without Systems is Just Chaos with Momentum</h3>
+            <p class="text-[#a3a3a3] text-sm leading-relaxed mb-6 flex-1">What I learned running operations across factories, trading firms, and retail outlets — and why systems save businesses.</p>
+            <div class="flex items-center gap-2 text-[#3B82F6] text-sm font-semibold mt-auto">
+              <span>Read Post</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 6 -->
+        <div class="post-card bg-[#161616] border border-[#262626] rounded-xl overflow-hidden group cursor-pointer hover:border-[#3B82F6] transition-all flex flex-col">
+          <div class="aspect-video bg-[#1e1e1e] flex flex-col items-center justify-center gap-3">
+            <span class="material-symbols-outlined text-[#3B82F6] text-[56px] card-icon">lightbulb</span>
+            <span class="font-mono text-[#3B82F6] text-[10px] tracking-widest uppercase">Strategy</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <span class="text-[#3B82F6] font-mono text-[10px] tracking-widest uppercase mb-2">STRATEGY · Apr 2026</span>
+            <h3 class="text-lg font-semibold mb-3 group-hover:text-[#3B82F6] transition-colors leading-snug">Simple Ideas Win — Why Complexity Kills Startups</h3>
+            <p class="text-[#a3a3a3] text-sm leading-relaxed mb-6 flex-1">After 25 years, the pattern is clear. The businesses that last are built on ideas you can explain in one sentence.</p>
+            <div class="flex items-center gap-2 text-[#3B82F6] text-sm font-semibold mt-auto">
+              <span>Read Post</span>
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="py-20 bg-[#0a0a0a]">
+    <div class="max-w-[650px] mx-auto px-6 text-center">
+      <span class="material-symbols-outlined text-[#3B82F6] text-[48px] mb-4 block">mark_email_unread</span>
+      <h2 class="text-3xl font-bold mb-4">Get New Posts in Your Inbox</h2>
+      <p class="text-[#a3a3a3] mb-8">No spam. No fluff. Just honest writing about business, startups, and AI — whenever I publish something worth reading.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <input
+          type="email"
+          placeholder="your@email.com"
+          class="bg-[#050505] border border-[#262626] text-white px-6 py-4 rounded-lg w-full md:w-80 focus:border-[#3B82F6] outline-none font-mono text-sm placeholder-[#404040]"
+        />
+        <button class="bg-[#3B82F6] text-white px-8 py-4 rounded-lg font-semibold hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all whitespace-nowrap">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full bg-[#050505] border-t border-[#262626]">
+  <div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-12 py-6 gap-4">
+    <div class="text-2xl font-semibold text-white">Owais Qarni</div>
+    <p class="text-xs text-[#a3a3a3]">© 2026 Owais Qarni. All rights reserved.</p>
+    <div class="flex gap-8">
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">LinkedIn</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">Twitter</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">Substack</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 20) {
+      header.classList.add('shadow-lg');
+    } else {
+      header.classList.remove('shadow-lg');
+    }
+  });
+</script>
+
+</body>
+</html>

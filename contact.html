@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact | Owais Qarni</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LdN7yMtAAAAAKjp8xzOmiFOTvbNSjIHyPToHgPt"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+  body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Geist', sans-serif;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  input, textarea, select {
+    background-color: #050505 !important;
+    border: 1px solid #262626 !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    width: 100% !important;
+    font-family: 'Geist Mono', monospace !important;
+    font-size: 14px !important;
+    outline: none !important;
+    transition: border-color 0.2s !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  input:focus, textarea:focus, select:focus {
+    border-color: #3B82F6 !important;
+    background-color: #0a0a0a !important;
+  }
+  input::placeholder, textarea::placeholder {
+    color: #404040 !important;
+    -webkit-text-fill-color: #404040 !important;
+  }
+  select option {
+    background-color: #161616 !important;
+    color: #ffffff !important;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #050505 inset !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-[#262626]">
+  <nav class="flex justify-between items-center max-w-[1200px] mx-auto px-12 py-3">
+    <a href="code.html" class="text-2xl font-semibold text-white">Owais Qarni</a>
+    <div class="hidden md:flex items-center gap-12">
+      <a href="code.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Home</a>
+      <a href="about.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">About</a>
+      <a href="work-with-me.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Work With Me</a>
+      <a href="blog.html" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors">Blog</a>
+      <a href="contact.html" class="text-[#3B82F6] font-semibold border-b-2 border-[#3B82F6]">Contact</a>
+    </div>
+    <button class="bg-[#3B82F6] text-white px-6 py-2 rounded font-medium uppercase tracking-wider text-sm hover:opacity-90 transition-opacity">
+      Get In Touch
+    </button>
+  </nav>
+</header>
+
+<main class="pt-24">
+
+  <!-- Hero -->
+  <section class="relative py-24 px-6 overflow-hidden text-center">
+    <div class="hero-grid absolute inset-0 pointer-events-none opacity-50"></div>
+    <div class="relative max-w-[600px] mx-auto">
+      <span class="font-mono text-[#3B82F6] text-xs tracking-[0.2em] uppercase mb-4 block">Get In Touch</span>
+      <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+        Let's <span class="text-[#3B82F6]">Talk</span>
+      </h1>
+      <p class="text-lg text-[#a3a3a3] leading-relaxed">
+        Whether you want to work together, have a question, or just want to say hello — I read every message personally and reply within 48 hours.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Layout -->
+  <section class="py-20 bg-[#050505]">
+    <div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-16">
+
+      <!-- Left: Info -->
+      <div class="md:col-span-2 flex flex-col gap-10">
+
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Ways to Reach Me</h2>
+
+          <!-- Email -->
+          <div class="flex items-start gap-4 mb-6">
+            <div class="bg-[#3B82F6]/10 border border-[#3B82F6]/20 rounded-lg p-3">
+              <span class="material-symbols-outlined text-[#3B82F6]">mail</span>
+            </div>
+            <div>
+              <p class="text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-1">Email</p>
+              <a href="mailto:owais@owaisqarni.com" class="text-white hover:text-[#3B82F6] transition-colors font-medium">owais@owaisqarni.com</a>
+            </div>
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="flex items-start gap-4 mb-6">
+            <div class="bg-[#3B82F6]/10 border border-[#3B82F6]/20 rounded-lg p-3">
+              <span class="material-symbols-outlined text-[#3B82F6]">person</span>
+            </div>
+            <div>
+              <p class="text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-1">LinkedIn</p>
+              <a href="https://www.linkedin.com/in/owais-qarni/" target="_blank" class="text-white hover:text-[#3B82F6] transition-colors font-medium">linkedin.com/in/owais-qarni</a>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="flex items-start gap-4">
+            <div class="bg-[#3B82F6]/10 border border-[#3B82F6]/20 rounded-lg p-3">
+              <span class="material-symbols-outlined text-[#3B82F6]">location_on</span>
+            </div>
+            <div>
+              <p class="text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-1">Based In</p>
+              <p class="text-white font-medium">Pakistan · Available Globally</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- What to expect -->
+        <div class="bg-[#161616] border border-[#262626] rounded-xl p-6">
+          <h3 class="font-semibold mb-4 text-sm uppercase tracking-wider font-mono text-[#a3a3a3]">What to Expect</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-[#a3a3a3] text-sm">
+              <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">schedule</span>
+              Reply within 48 hours
+            </li>
+            <li class="flex items-start gap-3 text-[#a3a3a3] text-sm">
+              <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">person</span>
+              You'll hear from me directly — no assistants
+            </li>
+            <li class="flex items-start gap-3 text-[#a3a3a3] text-sm">
+              <span class="material-symbols-outlined text-[#3B82F6] text-base mt-0.5">chat</span>
+              Honest conversation — no sales pitch
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Right: Form -->
+      <div class="md:col-span-3">
+        <div class="bg-[#161616] border border-[#262626] rounded-xl p-10">
+          <h2 class="text-2xl font-bold mb-2">Send a Message</h2>
+          <p class="text-[#a3a3a3] text-sm mb-8">Fill in the form and I'll get back to you shortly.</p>
+
+          <form class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">Your Name *</label>
+                <input type="text" placeholder="John Smith" required/>
+              </div>
+              <div>
+                <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">Email Address *</label>
+                <input type="email" placeholder="john@company.com" required/>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">Subject</label>
+              <input type="text" placeholder="What is this about?"/>
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">I'm Reaching Out About</label>
+              <select>
+                <option value="" disabled selected>Select a topic</option>
+                <option value="advisory">Founder Advisory</option>
+                <option value="review">Business Review</option>
+                <option value="speaking">Speaking / Workshop</option>
+                <option value="collaboration">Collaboration / Partnership</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-[#a3a3a3] uppercase tracking-widest mb-2">Your Message *</label>
+              <textarea rows="6" placeholder="Tell me what's on your mind..." required></textarea>
+            </div>
+            <button type="submit" id="submit-btn" class="w-full bg-[#3B82F6] text-white py-4 rounded-lg font-semibold hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all">
+              Send Message
+            </button>
+            <p class="text-center text-xs text-[#404040] font-mono">I read every message personally and reply within 48 hours.</p>
+            <p class="text-center text-xs text-[#404040] font-mono">
+              Protected by reCAPTCHA —
+              <a href="https://policies.google.com/privacy" target="_blank" class="underline hover:text-[#a3a3a3]">Privacy</a> &
+              <a href="https://policies.google.com/terms" target="_blank" class="underline hover:text-[#a3a3a3]">Terms</a>
+            </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full bg-[#050505] border-t border-[#262626]">
+  <div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-12 py-6 gap-4">
+    <div class="text-2xl font-semibold text-white">Owais Qarni</div>
+    <p class="text-xs text-[#a3a3a3]">© 2026 Owais Qarni. All rights reserved.</p>
+    <div class="flex gap-8">
+      <a href="https://www.linkedin.com/in/owais-qarni/" target="_blank" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">LinkedIn</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">Twitter</a>
+      <a href="#" class="text-[#a3a3a3] hover:text-[#3B82F6] transition-colors text-xs">Substack</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // reCAPTCHA v3 — runs invisibly on form submit
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = this;
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6LdN7yMtAAAAAKjp8xzOmiFOTvbNSjIHyPToHgPt', {action: 'contact'}).then(function(token) {
+        // Add token to form so it can be verified server-side later
+        let input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'g-recaptcha-response';
+        input.value = token;
+        form.appendChild(input);
+        // Show success message (form submission will be wired to Supabase later)
+        document.getElementById('submit-btn').textContent = '✓ Message Sent!';
+        document.getElementById('submit-btn').disabled = true;
+        document.getElementById('submit-btn').classList.add('opacity-70');
+      });
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 20) {
+      header.classList.add('shadow-lg');
+    } else {
+      header.classList.remove('shadow-lg');
+    }
+  });
+</script>
+
+</body>
+</html>
