@@ -228,25 +228,50 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
-  // reCAPTCHA v3 — runs invisibly on form submit
-  document.querySelector('form').addEventListener('submit', function(e) {
+  const SUPABASE_URL = 'https://hawdiayozqtqysxwdrzg.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_jN668BDH1Oy4h4p8c65PUg_QOnchfyD';
+  const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  document.querySelector('form').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const form = this;
-    grecaptcha.ready(function() {
-      grecaptcha.execute('6LdN7yMtAAAAAKjp8xzOmiFOTvbNSjIHyPToHgPt', {action: 'contact'}).then(function(token) {
-        // Add token to form so it can be verified server-side later
-        let input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = 'g-recaptcha-response';
-        input.value = token;
-        form.appendChild(input);
-        // Show success message (form submission will be wired to Supabase later)
-        document.getElementById('submit-btn').textContent = '✓ Message Sent!';
-        document.getElementById('submit-btn').disabled = true;
-        document.getElementById('submit-btn').classList.add('opacity-70');
+    const btn = document.getElementById('submit-btn');
+    const inputs = this.querySelectorAll('input[type="text"]');
+    const name    = inputs[0].value.trim();
+    const subject = inputs[1].value.trim();
+    const email   = this.querySelector('input[type="email"]').value.trim();
+    const topic   = this.querySelector('select').value;
+    const message = this.querySelector('textarea').value.trim();
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const { error } = await supabaseClient.from('contact_submissions').insert([{
+      name, email, subject, topic, message
+    }]);
+
+    if (error) {
+      console.error('Supabase error:', error);
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email owais@owaisqarni.com directly.');
+      return;
+    }
+
+    if (typeof grecaptcha !== 'undefined') {
+      grecaptcha.ready(() => {
+        grecaptcha.execute('6LdN7yMtAAAAAKjp8xzOmiFOTvbNSjIHyPToHgPt', {action: 'contact'});
       });
-    });
+    }
+
+    btn.textContent = '✓ Message Sent!';
+    btn.classList.add('opacity-70');
+
+    const success = document.createElement('div');
+    success.className = 'mt-4 p-4 bg-[#3B82F6]/10 border border-[#3B82F6]/30 rounded-lg text-center';
+    success.innerHTML = '<p class="text-[#3B82F6] font-mono text-sm">✓ Message received! I\'ll reply within 48 hours.</p>';
+    btn.parentNode.insertBefore(success, btn.nextSibling);
   });
 
   window.addEventListener('scroll', () => {

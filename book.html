@@ -250,7 +250,12 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
+  const SUPABASE_URL = 'https://hawdiayozqtqysxwdrzg.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_jN668BDH1Oy4h4p8c65PUg_QOnchfyD';
+  const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
   // State
   let currentMonth, currentYear, selectedDate, selectedTime;
   const today = new Date();
@@ -380,14 +385,39 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function submitBooking(e) {
+  async function submitBooking(e) {
     e.preventDefault();
-    const name = document.getElementById('booking-name').value;
-    const email = document.getElementById('booking-email').value;
+    const btn = document.getElementById('book-btn');
+    const name     = document.getElementById('booking-name').value.trim();
+    const email    = document.getElementById('booking-email').value.trim();
+    const company  = document.getElementById('booking-business').value.trim();
+    const message  = document.getElementById('booking-message').value.trim();
+
+    btn.textContent = 'Confirming...';
+    btn.disabled = true;
+
+    // Format date as YYYY-MM-DD for database
+    const yyyy = selectedDate.getFullYear();
+    const mm   = String(selectedDate.getMonth() + 1).padStart(2, '0');
+    const dd   = String(selectedDate.getDate()).padStart(2, '0');
+    const dateISO = `${yyyy}-${mm}-${dd}`;
+
+    const { error } = await supabaseClient.from('bookings').insert([{
+      name, email, company, what_to_discuss: message,
+      booking_date: dateISO, booking_time: selectedTime
+    }]);
+
+    if (error) {
+      console.error('Supabase error:', error);
+      btn.textContent = 'Confirm Booking';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email owais@owaisqarni.com directly.');
+      return;
+    }
+
     const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
     const dateStr = selectedDate.toLocaleDateString('en-US', options);
 
-    // Show confirmation
     document.getElementById('confirmation-text').textContent =
       `Thanks ${name}! Your discovery call is confirmed. A video link will be sent to ${email}.`;
     document.getElementById('conf-date').textContent = dateStr;
